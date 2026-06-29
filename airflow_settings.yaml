@@ -1,0 +1,9 @@
+airflow:
+  connections:
+    - conn_id: dw_postgres
+      conn_type: postgres
+      conn_host: dw_postgres
+      conn_schema: dw_rrhh
+      conn_login: dw_user
+      conn_password: dw_password
+      conn_port: 5432

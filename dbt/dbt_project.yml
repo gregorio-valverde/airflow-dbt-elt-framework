@@ -1,0 +1,24 @@
+name: "dw_rrhh"
+version: "1.0.0"
+config-version: 2
+
+profile: "dw_rrhh"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dw_rrhh:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table

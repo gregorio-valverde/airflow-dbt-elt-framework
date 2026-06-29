@@ -1,0 +1,12 @@
+{
+  "source_rows": 4725,
+  "distinct_legajo": 4500,
+  "duplicated_legajo_rows": 450,
+  "tables": {
+    "src_rrhh_personal": 4725,
+    "src_rrhh_departamentos": 5,
+    "src_rrhh_consultoras": 4,
+    "src_rrhh_evaluaciones": 23625,
+    "src_nominas_2025": 56700
+  }
+}

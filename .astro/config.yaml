@@ -1,0 +1,6 @@
+api-server:
+    port: "8080"
+postgres:
+    port: "5680"
+project:
+    name: dw-airflow

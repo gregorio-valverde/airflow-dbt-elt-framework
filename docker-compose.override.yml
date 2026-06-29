@@ -1,0 +1,47 @@
+services:
+  scheduler:
+    container_name: airflow_scheduler_gvn
+    env_file:
+      - .env
+    volumes:
+      - ./dbt:/usr/local/airflow/dbt
+      - ./.env:/usr/local/airflow/.env:ro
+
+  dag-processor:
+    container_name: airflow_dag_processor_gvn
+    env_file:
+      - .env
+    volumes:
+      - ./.env:/usr/local/airflow/.env:ro
+
+  api-server:
+    container_name: airflow_api_server_gvn
+    env_file:
+      - .env
+    volumes:
+      - ./.env:/usr/local/airflow/.env:ro
+
+  triggerer:
+    container_name: airflow_triggerer_gvn
+    env_file:
+      - .env
+    volumes:
+      - ./.env:/usr/local/airflow/.env:ro
+
+  postgres:
+    container_name: airflow_postgres_gvn
+
+  dw_postgres:
+    image: postgres:16
+    container_name: dw_postgres_gvn
+    environment:
+      POSTGRES_USER: ${DW_POSTGRES_USER:-dw_user}
+      POSTGRES_PASSWORD: ${DW_POSTGRES_PASSWORD:-dw_password}
+      POSTGRES_DB: ${DW_POSTGRES_DB:-dw_rrhh}
+    ports:
+      - "5433:5432"
+    volumes:
+      - dw_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  dw_postgres_data:
