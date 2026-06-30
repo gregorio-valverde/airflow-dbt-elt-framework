@@ -6,6 +6,8 @@ services:
     volumes:
       - ./dbt:/usr/local/airflow/dbt
       - ./.env:/usr/local/airflow/.env:ro
+    networks:
+      - airflow_gvn_net
 
   dag-processor:
     container_name: airflow_dag_processor_gvn
@@ -13,6 +15,8 @@ services:
       - .env
     volumes:
       - ./.env:/usr/local/airflow/.env:ro
+    networks:
+      - airflow_gvn_net
 
   api-server:
     container_name: airflow_api_server_gvn
@@ -20,6 +24,8 @@ services:
       - .env
     volumes:
       - ./.env:/usr/local/airflow/.env:ro
+    networks:
+      - airflow_gvn_net
 
   triggerer:
     container_name: airflow_triggerer_gvn
@@ -27,9 +33,13 @@ services:
       - .env
     volumes:
       - ./.env:/usr/local/airflow/.env:ro
+    networks:
+      - airflow_gvn_net
 
   postgres:
     container_name: airflow_postgres_gvn
+    networks:
+      - airflow_gvn_net
 
   dw_postgres:
     image: postgres:16
@@ -42,6 +52,13 @@ services:
       - "5433:5432"
     volumes:
       - dw_postgres_data:/var/lib/postgresql/data
+    networks:
+      - airflow_gvn_net
 
 volumes:
   dw_postgres_data:
+
+networks:
+  airflow_gvn_net:
+    name: airflow_gvn_net
+    driver: bridge

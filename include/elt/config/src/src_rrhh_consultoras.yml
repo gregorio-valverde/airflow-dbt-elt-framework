@@ -1,0 +1,23 @@
+table: src_rrhh_consultoras
+schema: raw
+
+columns:
+  - name: consultora_cuit
+    type: TEXT
+    nullable: true
+  - name: consultora_razon_social
+    type: TEXT
+    nullable: true
+  - name: estado_proveedor
+    type: TEXT
+    nullable: true
+  - name: fecha_extraccion
+    type: DATE
+    nullable: true
+  - name: sistema_origen
+    type: TEXT
+    nullable: true
+
+indexes:
+  - columns: consultora_cuit
+    unique: false

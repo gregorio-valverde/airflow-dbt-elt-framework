@@ -1,0 +1,79 @@
+table: src_rrhh_nominas
+schema: raw
+
+columns:
+  - name: sistema_origen
+    type: TEXT
+    nullable: true
+  - name: fecha_extraccion
+    type: DATE
+    nullable: true
+  - name: recibo_nomina_id
+    type: TEXT
+    nullable: true
+  - name: periodo
+    type: TEXT
+    nullable: true
+  - name: legajo
+    type: INTEGER
+    nullable: true
+  - name: nombre
+    type: TEXT
+    nullable: true
+  - name: apellido
+    type: TEXT
+    nullable: true
+  - name: departamento_codigo
+    type: TEXT
+    nullable: true
+  - name: tipo_empleado
+    type: TEXT
+    nullable: true
+  - name: consultora_cuit
+    type: TEXT
+    nullable: true
+  - name: estado_liquidacion
+    type: TEXT
+    nullable: true
+  - name: dias_liquidados
+    type: INTEGER
+    nullable: true
+  - name: salario_mensual
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: horas_base
+    type: NUMERIC(10,2)
+    nullable: true
+  - name: importe_horas_base
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: horas_extra
+    type: NUMERIC(10,2)
+    nullable: true
+  - name: importe_horas_extra
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: bono_productividad
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: descuento_ausencias
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: total_bruto
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: coste_empresa_estimado
+    type: NUMERIC(14,2)
+    nullable: true
+
+indexes:
+  - columns: recibo_nomina_id
+    unique: false
+  - columns: periodo
+    unique: false
+  - columns: legajo
+    unique: false
+  - columns: departamento_codigo
+    unique: false
+  - columns: consultora_cuit
+    unique: false

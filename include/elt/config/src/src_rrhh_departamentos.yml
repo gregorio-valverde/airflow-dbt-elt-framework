@@ -1,0 +1,23 @@
+table: src_rrhh_departamentos
+schema: raw
+
+columns:
+  - name: departamento_codigo
+    type: TEXT
+    nullable: true
+  - name: departamento_descripcion
+    type: TEXT
+    nullable: true
+  - name: activo
+    type: TEXT
+    nullable: true
+  - name: fecha_extraccion
+    type: DATE
+    nullable: true
+  - name: sistema_origen
+    type: TEXT
+    nullable: true
+
+indexes:
+  - columns: departamento_codigo
+    unique: false

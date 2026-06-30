@@ -1,1 +1,2 @@
-# Python dependencies are installed in Dockerfile for this portfolio template.
+apache-airflow-providers-postgres
+psycopg2-binary

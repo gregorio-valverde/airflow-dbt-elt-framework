@@ -1,0 +1,75 @@
+table: src_rrhh_personal
+schema: raw
+
+columns:
+  - name: fecha_extraccion
+    type: DATE
+    nullable: true
+  - name: sistema_origen
+    type: TEXT
+    nullable: true
+  - name: archivo_origen
+    type: TEXT
+    nullable: true
+  - name: nro_linea_archivo
+    type: INTEGER
+    nullable: true
+  - name: legajo
+    type: INTEGER
+    nullable: true
+  - name: nombre
+    type: TEXT
+    nullable: true
+  - name: apellido
+    type: TEXT
+    nullable: true
+  - name: departamento_codigo
+    type: TEXT
+    nullable: true
+  - name: departamento_descripcion
+    type: TEXT
+    nullable: true
+  - name: tipo_empleado
+    type: TEXT
+    nullable: true
+  - name: salario
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: precio_hora
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: precio_hora_extra
+    type: NUMERIC(14,2)
+    nullable: true
+  - name: consultora_cuit
+    type: TEXT
+    nullable: true
+  - name: consultora_razon_social
+    type: TEXT
+    nullable: true
+  - name: evaluacion_2024
+    type: TEXT
+    nullable: true
+  - name: evaluacion_2023
+    type: TEXT
+    nullable: true
+  - name: evaluacion_2022
+    type: TEXT
+    nullable: true
+  - name: evaluacion_2021
+    type: TEXT
+    nullable: true
+  - name: evaluacion_2020
+    type: TEXT
+    nullable: true
+  - name: rotacion
+    type: INTEGER
+    nullable: true
+
+indexes:
+  - columns: legajo
+    unique: false
+  - columns: departamento_codigo
+    unique: false
+  - columns: consultora_cuit
+    unique: false
