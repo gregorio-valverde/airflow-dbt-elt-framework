@@ -1,1 +1,0 @@
-# System packages are installed in Dockerfile for this portfolio template.

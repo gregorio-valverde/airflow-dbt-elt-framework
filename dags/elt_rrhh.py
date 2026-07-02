@@ -7,7 +7,7 @@ from include.elt.config.pipelines.pipelines_rrhh import pipelines
 elt_dag = DagEltGenerator(
     dag_id="elt_rrhh",
     pipelines=pipelines,
-    dbt_tag=None,
+    dbt_tag="rrhh",
     schedule=None,
     start_date=datetime(2026, 1, 1),
     default_args={
